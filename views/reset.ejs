@@ -1,0 +1,20 @@
+<%- include("header")%>
+<link rel="stylesheet" href="/stylesheets/reset.css">
+
+
+  <div id="main">
+    <div class="box">
+      <h1>reset your password</h1>
+      <form action="/reset" method="post">
+        <input type="password" name="oldpassword" placeholder="Enter your old password"> <br> <br>
+        <input type="password" name="newpassword" placeholder="Enter your new password"> <br> <br>
+        <button>Reset password</button> 
+      </form>
+      <a href="/back"><i class="ri-arrow-left-circle-fill"></i></a> 
+
+    </div>
+  </div>
+
+
+
+  <%- include("footer")%>

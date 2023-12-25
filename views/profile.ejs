@@ -1,0 +1,132 @@
+<%- include("header.ejs")%>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+
+    <div id="main">
+        <div class="nav">
+            <div class="left">
+
+                <img src=" https://www.thebalancemoney.com/thmb/FeGyQImVS4tuFdOK2sVZx_0oNuM=/fit-in/1500x750/filters:format(png):fill(white):max_bytes(150000):strip_icc()/Expensify-1522bc9d89c44b929a38586fa746830b.jpg"
+                    alt="">
+            </div>
+            <div class="right">
+                <div class="reset"> <a href="/reset">reset password</a></div>
+                <div class="logout"><a href="/signout">logout</a></div>
+            </div>
+        </div>
+
+        <div class="nav_bottom">
+            <h1>👋hello <span>
+                    <%= admin.username %>
+                </span> welcome to expense tracker app
+            </h1>
+            <p>track your daily expenses here</p>
+        </div>
+        <hr />
+        <div class="center">
+            <div class="add">
+                <a href="/createexpense">Add new expenses </a>
+            </div>
+
+            <div class="filter">
+                <form action="/filter">
+                    <select name="key" id="">
+                        <option value="amount">Amount</option>
+                        <option value="remark">Remark</option>
+                        <option value="category">Category</option>
+                        <option value="paymentmode">Payment Mode</option>
+                        <option value="Date">Date</option>
+                    </select>
+                    <input type="text" name="value" placeholder="enter search term" />
+                    <button>Filter</button>
+                </form>
+            </div>
+        </div>
+
+
+        <div id="bottom">
+
+            <br><br>
+
+            <table border="1">
+                <tr>
+                    <!-- <th>Date </th> -->
+                    <th>Amount </th>
+                    <th>Catagory</th>
+                    <th>paymode </th>
+                    <th>remark</th>
+                    <th>
+                        <i class="ri-edit-line"></i> / <i class="ri-delete-bin-line"></i>
+                    </th>
+                </tr>
+                <!-- <tr>
+                    <td>Row 1, Cell 1</td>
+                    <td>Row 1, Cell 2</td>
+                    <td>Row 1, Cell 3</td>
+                    <td>Row 1, Cell 3</td>
+                    <td>Row 1, Cell 3</td>
+                </tr> -->
+
+
+
+                <% expenses.forEach((e)=>{ %>
+                    <tr>
+                        <!-- <td>
+                            <%= e.date %>
+                        </td> -->
+                        <td>
+                            <%= e.amount %>
+                        </td>
+                        <td>
+                            <%= e.category %>
+                        </td>
+                        <td>
+                            <%= e.paymentmode %>
+                        </td>
+                        <td>
+                            <%= e.remark%>
+                        </td>
+                        <td class="opt"> <a href="/delete/<%= e._id %>">Delete</a> &nbsp;
+                            <a href="/update/<%= e._id %>">Edit</a>
+                        </td>
+                    </tr>
+                    <% }) %>
+
+
+
+
+
+
+                        <!-- Add more rows as needed -->
+            </table>
+            <br>
+            <div id="total">
+                Total Expense: <%= expenses.reduce((ac,cv)=> ac+cv.amount, 0)%>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- <h1>Sum: <%= expenses.reduce((ac,cv)=> ac+cv.amount, 0)%></h1>
+    </div>
+
+    <% expenses.forEach((j)=>{%>
+        <h1>
+            remark: <%= j.remark %>
+        </h1>
+        <h1>
+            <%= j.amount %>
+        </h1>
+        <h1>
+            <%= j.paymentmode %>
+        </h1>
+        <h1>
+            <%= j.category %>
+        </h1>
+        <% }) %>
+            </div> -->
+
+    <%- include("footer.ejs")%>

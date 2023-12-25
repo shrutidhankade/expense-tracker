@@ -1,0 +1,22 @@
+<%-include("header")%>
+    <link rel="stylesheet" href="/stylesheets/signup.css">
+
+
+    <div class="main">
+        <div class="box">
+            <h1>welcome to expense tracker</h1>
+            <h2>create account</h2>
+            <form action="/signup" method="post">
+                <input type="text" name="username" placeholder="username"><br><br>
+                <input type="email" name="email" placeholder="email"><br><br>
+                <input type="number" name="number" placeholder="enter mobile number"><br><br>
+                <input type="password" name="password" placeholder="password"><br><br>
+                <button>continue</button>
+            </form>
+
+            <br>
+            <h3>if register continue&nbsp;- &nbsp;<a href="/signin">singin</a></h3>
+        </div>
+    </div>
+
+    <%-include("footer")%>

@@ -1,0 +1,25 @@
+<%-include("header")%>
+    <link rel="stylesheet" href="/stylesheets/signin.css">
+    <div class="main">
+        <div class="box">
+            <h1> sign in account to see more </h1>
+            <% if(error.length> 0){%>
+                <p class="error">
+                    <%=error%>
+                </p>
+                <%}%>
+
+                    <form action="/signin" method="post">
+                        <input type="text" name="username" placeholder="username"><br><br>
+                        <!-- <input type="email" name="email" placeholder="email"><br><br> -->
+                        <input type="password" name="password" placeholder="password"><br><br>
+                        <button>signin</button>
+
+                    </form>
+                    <div class="sign"><a href="/forget">forgotten your password?</a></div>
+
+                    <h3>Don't have an account? <a href="/signup">signup</a></h3>
+                    <br>
+        </div>
+    </div>
+    <%-include("footer")%>

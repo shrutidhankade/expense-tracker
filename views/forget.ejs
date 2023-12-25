@@ -1,0 +1,23 @@
+<%-include("header")%>
+   <link rel="stylesheet" href="/stylesheets/forget.css">
+
+
+
+   <div id="main">
+      <div class="box">
+         <img
+            src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/22/2f/d0/222fd09a-2281-e3de-d9a0-01be84a2ee0d/logo_smart_lock_color-0-1x_U007emarketing-0-6-0-85-220.png/1200x600wa.png"
+            alt="">
+         <h1>forget password</h1>
+         <p>you can reset your password here....</p>
+         <form action="/send-mail" method="POST">
+            <input type="email" name="email" placeholder="enter registered email" /><br><br>
+            <button>Send Mail</button>
+         </form>
+      <a href="/return"><i class="ri-arrow-left-circle-fill"></i></a> 
+
+      </div>
+   </div>
+   <br>
+
+   <%-include("footer")%>
